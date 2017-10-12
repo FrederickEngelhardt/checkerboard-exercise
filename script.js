@@ -1,13 +1,12 @@
 // Your JS goes here
 function createTable(){
-console.log('Function has been activated')
-  for (var i = 0; i < 81; i++){
-    ranColorArray = []
-    for (let x = 0; x < 5; x++){
-      var randomColors = '#' + Math.random().toString(16).slice(-6)
-      ranColorArray.push(randomColors)
+  var ranColorArray = [];
+  for (var i = 0; i < 81; i++) {
+    for (let x = 0; x < 5; x++) {
+      var randomColors = '#' + Math.random().toString(16).slice(-6);
+      ranColorArray.push(randomColors);
     }
-    console.log(ranColorArray)
+    // console.log(ranColorArray)
     var tile = document.createElement("div");
     var body = document.getElementsByTagName('body')[0];
     document.body.prepend(tile);
@@ -15,19 +14,36 @@ console.log('Function has been activated')
     tile.style.paddingBottom = '11.1%';
     tile.display = 'float';
     tile.style.float = 'left';
-    if(i%2 === 0){
-      tile.style.background = `linear-gradient(to top left,${ranColorArray[0]},${ranColorArray[1]},${ranColorArray[2]},${ranColorArray[3]},${ranColorArray[4]})`
+    if(i%2 === 0) {
+      tile.style.background = `linear-gradient(to bottom right,${ranColorArray[0]},${ranColorArray[1]},${ranColorArray[2]},${ranColorArray[3]},${ranColorArray[4]})`;
     }
     else if (i%2 === 1) {
-
-      tile.style.background = `linear-gradient(to top left,${ranColorArray[0]},${ranColorArray[1]},${ranColorArray[2]},${ranColorArray[3]},${ranColorArray[4]})`
+      tile.style.background = `linear-gradient(to top right,${ranColorArray[0]},${ranColorArray[1]},${ranColorArray[2]},${ranColorArray[3]},${ranColorArray[4]})`;
     }
   }
 }
 // USE THIS TO LOAD THE FUNCTION
-document.getElementsByTagName('HTML')[0].addEventListener('load',createTable())
+document.getElementsByTagName('HTML')[0].addEventListener('load',createTable());
 
-// intervals
-// setInterval(, 1000)
+// Add music here
+
+
+
+
+
+
+
+// interval to repeat background
+var count = 0;
+var repeat = setInterval(function(){
+  count += 1
+  console.log(count)
+  if (count === 500){
+    console.log('REACHED EXIT OF LOOP')
+    return clearInterval(repeat)
+  }
+  createTable();
+}, 1)
+
 
 // console.log(document.getElementsByTagName('HTML')[0])
