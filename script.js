@@ -12,12 +12,12 @@ console.log('Function has been activated')
     tile.style.float = 'left';
     if(i%2 === 0){
       // tile.style.background = 'linear-gradient(to top left,'+randomColors+ ',' + randomColors +')';
-      // tile.style.background = randomColors
-      tile.style.backgroundColor = 'black';
+      tile.style.background = randomColors
+      // tile.style.backgroundColor = 'black';
     }
     else if (i%2 === 1) {
-      tile.style.backgroundColor = 'red';
-      // tile.style.background = randomColors
+      // tile.style.backgroundColor = 'red';
+      tile.style.background = randomColors
       // tile.style.background = `linear-gradient(to top left,${ran1},${ran2},${ran3},${ran4},${ran5})`
     }
   }
