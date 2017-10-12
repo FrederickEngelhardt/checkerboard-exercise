@@ -24,13 +24,10 @@ function createTable(){
 }
 // USE THIS TO LOAD THE FUNCTION
 document.getElementsByTagName('HTML')[0].addEventListener('load',createTable());
-
+var html = document.getElementsByTagName('HTML')[0]
 // Add music here
-
-
-
-
-
+var audio = new Audio('beat.mp3');
+audio.play();
 
 
 // interval to repeat background
@@ -43,7 +40,6 @@ var repeat = setInterval(function(){
     return clearInterval(repeat)
   }
   createTable();
-}, 1)
-
+}, 300)
 
 // console.log(document.getElementsByTagName('HTML')[0])
